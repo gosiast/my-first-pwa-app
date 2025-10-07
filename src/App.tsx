@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 
 type Video = {
+	id: string;
 	name: string;
 	video_url: string;
 };
@@ -25,7 +26,7 @@ function App() {
 				</header>
 				<main>
 					{data.map((video) => (
-						<div>
+						<div key={video.id}>
 							<h2>{video.name}</h2>
 							<video height={200} controls src={video.video_url} />
 						</div>
